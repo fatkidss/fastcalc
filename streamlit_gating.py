@@ -75,7 +75,7 @@ if ch == "CalcRiser":
     cwt = st.number_input("กรุณาเลือกน้ำหนักชิ้นงาน",min_value=0.0,max_value=30.0,value=4.0,step=0.5)
     cmd = st.number_input("กรุณาเลือก Casting mod",min_value=0.0,max_value=2.0,value=1.0,step=0.1)
     nh = st.number_input("กรุณาเลือก ความหนา neck",min_value=0.0,max_value=30.0,value=0.0,step=0.5)
-    cold = st.number_input("กรุณาเลือก ชนิด Riser Cold?",min_value=0,max_value=1,value=0,step=1)
+    cold = st.number_input("กรุณาเลือก ชนิด Riser Cold=1 , Hot=0",min_value=0,max_value=1,value=0,step=1)
     fname = st.text_input("กรอกชื่อไฟล์ที่จะบันทึก(.csv)","out_riser.csv")
     
     st.text("ข้อมูลของคุณ คือ : " + f'mat={mat} wt={cwt:.2f} mod={cmd} cold riser={cold} neck th={nh:.2f}')
