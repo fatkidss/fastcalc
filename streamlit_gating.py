@@ -20,7 +20,7 @@ if ch == "CalcGating":
     th = st.number_input("กรุณาเลือกความหนา ingate",min_value=0.0,max_value=10.0,value=4.0,step=0.1)
     name = st.text_input("กรอกชื่อ runner_ratio_n/choke_ratio_n/ingate_ratio_n","runner_1.2_main1")
 
-    fname = st.text_input("กรอกชื่อไฟล์ที่จะบันทึก(.csv)","out_gating.csv")
+    fname = st.text_input("กรอกชื่อไฟล์ที่จะบันทึก(.csv)","cal_gating.csv")
 
     st.text("ข้อมูลของคุณ คือ : " + f'h={h:.0f} f={f:0.2f} q={q:0.2f} p={p:0.1f} c={c:0.1f} name={name} gateTH={th:.1f}')
     c1 = CalcArea(h=h,f=f,q=q,p=p,c=c,name=name,gthickness=th)
@@ -75,8 +75,8 @@ if ch == "CalcRiser":
     cwt = st.number_input("กรุณาเลือกน้ำหนักชิ้นงาน",min_value=0.0,max_value=30.0,value=4.0,step=0.5)
     cmd = st.number_input("กรุณาเลือก Casting mod",min_value=0.0,max_value=2.0,value=1.0,step=0.1)
     nh = st.number_input("กรุณาเลือก ความหนา neck",min_value=0.0,max_value=30.0,value=0.0,step=0.5)
-    cold = st.number_input("กรุณาเลือก ชนิด Riser Cold=0 , Hot=1",min_value=0,max_value=1,value=0,step=1)
-    fname = st.text_input("กรอกชื่อไฟล์ที่จะบันทึก(.csv)","out_riser.csv")
+    cold = st.number_input("กรุณาเลือก ประเภทRiser ใส่ 0 หรือ 1 [Cold=0 , Hot=1]",min_value=0,max_value=1,value=0,step=1)
+    fname = st.text_input("กรอกชื่อไฟล์ที่จะบันทึก(.csv)","cal_riser.csv")
     
     st.text("ข้อมูลของคุณ คือ : " + f'mat={mat} wt={cwt:.2f} mod={cmd} cold riser={cold} neck th={nh:.2f}')
     r1 = CalcRiser(mat,cwt,cmd,cold,nh)
